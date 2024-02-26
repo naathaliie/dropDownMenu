@@ -1,12 +1,16 @@
 import InfoBox from "../InfoBox/InfoBox";
 import charactersJson from "../json/characteres.json";
+import { useState } from "react"; 
 
 const DropDownMenu = () => {
+
+    const [selectedName, setSelectedName] = useState(null);
+
     /* What will happen on the event onChange */
     const handleOnChange = (event) => {
         const selectedName = event.target.value;
         console.log("Du klickade på", selectedName);
-        <InfoBox/>
+        setSelectedName(selectedName);
 };
 
 
@@ -26,6 +30,8 @@ const DropDownMenu = () => {
           );
         })}
       </select>
+
+      {selectedName && <InfoBox selectedName={selectedName}/>}
     </div>
   );
 };

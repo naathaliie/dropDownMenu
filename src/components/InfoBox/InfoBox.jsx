@@ -1,5 +1,5 @@
-const InfoBox = () => {
-    return <h1>INFOBOX!</h1>
+const InfoBox = ({selectedName}) => {
+    return <h1>INFOBOX! {selectedName}</h1>
 };
 
 export default InfoBox;
